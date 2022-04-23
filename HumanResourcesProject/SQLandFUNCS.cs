@@ -13,9 +13,9 @@ namespace HumanResourcesProject
     {
         // connection string and sql connection object. 
         static public string Sqlstr = "Data Source=DESKTOP-OF07IF9;Initial Catalog=HRmanagement;Integrated Security=True";
-         public SqlConnection sqlCon = new SqlConnection(Sqlstr);
 
         // SQL classes.
+        public SqlConnection sqlCon = new SqlConnection(Sqlstr);
         SqlCommand CMD1;
         SqlDataReader DR1;
         SqlDataAdapter DA1;
@@ -52,21 +52,18 @@ namespace HumanResourcesProject
             }    
         }
 
-
-        //Show data from dataGrid (tbl_CANDIDATE)
-        public void DataGrid_CANDIDATE(DataGridView DTGV)
+        // to print data to a specific datagrid using specific table  
+        public void list(DataGridView DATAGRID, string query_SHOW)
         {
             sqlCon.Open();
-            string query = "select * from tbl_CANDIDATE";
-            CMD1 = new SqlCommand(query, sqlCon);
-            CMD1.ExecuteNonQuery();
-
-            DA1 = new SqlDataAdapter(CMD1);
+            DA1 = new SqlDataAdapter(query_SHOW, sqlCon);
             DT1 = new DataTable();
             DA1.Fill(DT1);
-            DTGV.DataSource = DT1;
+            DATAGRID.DataSource = DT1;
             sqlCon.Close();
         }
+
+        //*********************************************************************************************************
 
         // (tbl_CANDIDATE)
         public void InsertTOtbl_CANDIDATE()
@@ -98,26 +95,70 @@ namespace HumanResourcesProject
             sqlCon.Close();
         }
 
-        //*********************
-
+        //*********************************************************************************************************
 
         //  (tbl_WORKER)
-        public void DataGrid_WORKER(DataGridView DTVG)
+
+
+        //*********************************************************************************************************
+
+        // (EXCEPT SQL FUNCTIONS)
+
+        public string generateID()
         {
-            sqlCon.Open();
-            string query = "select * from tbl_WORKER";
-            CMD1 = new SqlCommand(query, sqlCon);
-            CMD1.ExecuteNonQuery();
-
-            DA1 = new SqlDataAdapter(CMD1);
-            DT1 = new DataTable();
-            DA1.Fill(DT1);
-
-            DTVG.DataSource = DT1;
-            sqlCon.Close();
+            Random R = new Random();
+            int First = R.Next(1,999999999);
+            int Second = R.Next(1, 999999999);
+            return "0";
         }
-
-
 
     }
 }
+
+
+
+/*
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * *****************************************
+  public void int ParametersCommand(string query,List<SqlParameter> parameters)
+{
+    SqlConnection connection = new SqlConnection(ConnectionString);
+    try
+    {
+        using (SqlCommand cmd = new SqlCommand(query, connection))
+        {   // for cases where no parameters needed
+            if (parameters != null)
+            {
+                cmd.Parameters.AddRange(parameters.ToArray());
+            }
+
+            connection.Open();
+            int result = cmd.ExecuteNonQuery();
+            return result;
+        }
+    }
+    catch (Exception ex)
+    {
+        AddEventToEventLogTable("ERROR in DAL.DataBase.ParametersCommand() method: " + ex.Message, 1);
+        return 0;
+        throw;
+    }
+
+    finally
+    {
+        CloseConnection(ref connection);
+    }
+}
+*/

@@ -87,6 +87,12 @@
     <Compile Include="MainPanels\HRchildpanels\infoPanel.Designer.cs">
       <DependentUpon>infoPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainPanels\HRchildpanels\passwordCheckPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainPanels\HRchildpanels\passwordCheckPanel.Designer.cs">
+      <DependentUpon>passwordCheckPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainPanels\HRchildpanels\workerPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,12 +148,15 @@
     <Compile Include="LoginPanels\SignUp%28USER%29.Designer.cs">
       <DependentUpon>SignUp%28USER%29.cs</DependentUpon>
     </Compile>
-    <Compile Include="SQLClass.cs" />
+    <Compile Include="SQLandFUNCS.cs" />
     <EmbeddedResource Include="MainPanels\HRchildpanels\candidatePanel.resx">
       <DependentUpon>candidatePanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainPanels\HRchildpanels\infoPanel.resx">
       <DependentUpon>infoPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainPanels\HRchildpanels\passwordCheckPanel.resx">
+      <DependentUpon>passwordCheckPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainPanels\HRchildpanels\workerPanel.resx">
       <DependentUpon>workerPanel.cs</DependentUpon>

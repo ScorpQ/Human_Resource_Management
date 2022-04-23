@@ -14,10 +14,8 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
     public partial class candidatePanel : Form
     {
         DataBase DT = new DataBase();
-
-        // To
-        string genderKeeper;
-
+        // sql transactions for the person who man or woman. Check line 93 & 98.
+        string genderKeeper;     
 
         public candidatePanel()
         {
@@ -26,29 +24,14 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
 
         private void candidatePanel_Load(object sender, EventArgs e)
         {
-            // Before 
-
-            DT.DataGrid_CANDIDATE(dataGridView1);
-        }
-
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // CV
-
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //gets a collection that contains all the rows
-            DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-            //gets a collection that contains all the rows
-            nameBox.Text = row.Cells[1].Value.ToString() + " " + row.Cells[2].Value.ToString();
-            mjrBox.Text = row.Cells[5].Value.ToString();
+            // print tbl_CANDIDATE to DataGrid1
+            string query_SHOW = "select * from tbl_CANDIDATE";
+            DT.list(dataGridView1, query_SHOW);          
         }
 
         private void addToGrid_Click(object sender, EventArgs e)
         {
-            //       
+            // Add new candidate to TBL_CANDIDATE      
             DT.sqlCon.Open();
             string query = "insert into tbl_CANDIDATE (Firstname, Lastname, Major, Phone, Gender,Hire) values (@p1,@p2,@p3,@p4,@p5,@p6)";
             SqlCommand cmd = new SqlCommand(query, DT.sqlCon);
@@ -60,10 +43,41 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             cmd.Parameters.AddWithValue("@p6", "waiting");
             cmd.ExecuteNonQuery();
             DT.sqlCon.Close();
-            
-            DT.DataGrid_CANDIDATE(dataGridView1);
-            
-            
+
+            // Print new table
+            string query_SHOW = "select * from tbl_CANDIDATE";
+            DT.list(dataGridView1, query_SHOW);
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //gets a collection that contains all the rows
+            DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+            //gets a collection that contains all the rows
+            nameBox.Text = row.Cells[1].Value.ToString() + " " + row.Cells[2].Value.ToString();
+            mjrBox.Text = row.Cells[5].Value.ToString();
+        }
+
+        private void hire_changeBTN_Click(object sender, EventArgs e)
+        {
+            // To change status of specific candidate to "Waiting For Approval".
+            string selectedValue = dataGridView1.SelectedRows[0].Cells["ID"].Value.ToString();
+            DT.change_Hire_To_waitingforapproval(selectedValue);
+
+            // Show new table.
+            string query_SHOW = "select * from tbl_CANDIDATE";
+            DT.list(dataGridView1, query_SHOW);
+        }
+
+        private void eliminatedBTN_Click(object sender, EventArgs e)
+        {
+            // To change status of specific candidate to "Eliminated". 
+            string selectedValue = dataGridView1.SelectedRows[0].Cells["ID"].Value.ToString();
+            DT.eliminate_the_candidate(selectedValue);
+
+            // Show new table.
+            string query_SHOW = "select * from tbl_CANDIDATE";
+            DT.list(dataGridView1, query_SHOW);
         }
 
         private void Male_CheckedChanged(object sender, EventArgs e)
@@ -76,24 +90,10 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             genderKeeper = "Female";
         }
 
-        private void hire_changeBTN_Click(object sender, EventArgs e)
-        { 
-            // To change 
-            string selectedValue = dataGridView1.SelectedRows[0].Cells["ID"].Value.ToString();
-            DT.change_Hire_To_waitingforapproval(selectedValue);
-
-            // To
-            DT.DataGrid_CANDIDATE(dataGridView1);
-        }
-
-        private void eliminatedBTN_Click(object sender, EventArgs e)
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //
-            string selectedValue = dataGridView1.SelectedRows[0].Cells["ID"].Value.ToString();
-            DT.eliminate_the_candidate(selectedValue);
+            // CV...
 
-            // updated datagrid
-            DT.DataGrid_CANDIDATE(dataGridView1);
         }
     }
 }

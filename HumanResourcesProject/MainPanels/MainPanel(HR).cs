@@ -20,21 +20,29 @@ namespace HumanResourcesProject.MainPanels
         infoPanel ip1 = new infoPanel();
         candidatePanel cp1 = new candidatePanel();
         workerPanel wp1 = new workerPanel();
+        passwordCheckPanel ch1 = new passwordCheckPanel();
         public string idKeeper1;
 
 
         public panelHR()
         {
             InitializeComponent();
+            
         }
 
         private void infoBTN_Click(object sender, EventArgs e)
         {
-            // To show the panel of "Bilgilerim"
+            // confirm current password to access panel of "Bilgilerim"
+
             panel2.Controls.Clear();
+            ch1.TopLevel = false;
+            panel2.Controls.Add(ch1);
+            ch1.Show();
+
             ip1.TopLevel = false;
             panel2.Controls.Add(ip1);
             ip1.Show();
+
         }
 
         private void exitBTN_Click(object sender, EventArgs e)
@@ -45,16 +53,17 @@ namespace HumanResourcesProject.MainPanels
 
         private void panelHR_Load(object sender, EventArgs e)
         { 
-            // label to name
+            // label to name and anothers
             label1.Text = idKeeper1;
+            ch1.idKeeper3 = idKeeper1;
 
-            string query = "select Firstname from tbl_USER where PerId=@id";
+           string query = "select Firstname from tbl_USER where PerId=@id";
             SqlCommand cmd1 = new SqlCommand(query,DT.sqlCon);
             cmd1.Parameters.AddWithValue("@id", label1.Text);
 
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd1);
-            da.Fill(dt);
+            da.Fill(dt);  
 
 
             // to

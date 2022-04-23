@@ -21,7 +21,10 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
 
         private void workerPanel_Load(object sender, EventArgs e)
         {
-            DT.DataGrid_WORKER(dataGridView1);
+            // print tbl_CANDIDATE to DataGrid1
+            string query_SHOW = "select * from TBL_WORKER";
+            DT.list(dataGridView1, query_SHOW);
+
             //dateTimePicker1.MinDate = DateTime.Today;
         }
     }

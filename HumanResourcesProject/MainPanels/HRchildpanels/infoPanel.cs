@@ -30,7 +30,7 @@ namespace HumanResourcesProject.MainPanels.HRpanels
             DT.sqlCon.Open();
             string query = "select * from tbl_USER where perID=@id";
             SqlCommand cmd = new SqlCommand(query,DT.sqlCon);
-            cmd.Parameters.AddWithValue("id", idKeeper2);
+            cmd.Parameters.AddWithValue("@id", idKeeper2);
 
             SqlDataReader dr = cmd.ExecuteReader();
             if(dr.Read())

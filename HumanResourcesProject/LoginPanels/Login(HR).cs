@@ -54,5 +54,6 @@ namespace HumanResourcesProject.LoginPanels
                 invalidLbl.Text = "Format Error.";
             }
         }
+
     }
 }
