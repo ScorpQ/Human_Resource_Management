@@ -46,10 +46,10 @@ namespace HumanResourcesProject.MainPanels
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(35)))), ((int)(((byte)(65)))));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.workerBTN);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.cndidateBTN);
             this.panel1.Controls.Add(this.infoBTN);
             this.panel1.Controls.Add(this.exitBTN);
@@ -86,7 +86,7 @@ namespace HumanResourcesProject.MainPanels
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Location = new System.Drawing.Point(0, 258);
+            this.button2.Location = new System.Drawing.Point(3, 258);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(339, 100);
             this.button2.TabIndex = 4;
@@ -99,7 +99,7 @@ namespace HumanResourcesProject.MainPanels
             this.workerBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.workerBTN.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.workerBTN.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.workerBTN.Location = new System.Drawing.Point(0, 364);
+            this.workerBTN.Location = new System.Drawing.Point(3, 364);
             this.workerBTN.Name = "workerBTN";
             this.workerBTN.Size = new System.Drawing.Size(339, 100);
             this.workerBTN.TabIndex = 3;

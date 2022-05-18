@@ -102,8 +102,7 @@ namespace HumanResourcesProject
 
         //*********************************************************************************************************
 
-        // (EXCEPT SQL FUNCTIONS)
-
+        // (EXCEPT SQL FUNCTIONS
         public string generateID()
         {
             Random R = new Random();
