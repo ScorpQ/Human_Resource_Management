@@ -71,13 +71,13 @@ namespace HumanResourcesProject
 
         }
 
-        //  if candidate is in "waiting" that makes turn into it "waiting for approval" (tbl_CANDIDATE)
+        //  if candidate is in "waiting" that makes turn into it "Approved" (tbl_CANDIDATE)
         public void change_Hire_To_waitingforapproval(string candidate_id)
         {
             sqlCon.Open();
             string query = "update tbl_CANDIDATE set Hire=@p1 where ID=@p2";
             CMD1 = new SqlCommand(query,sqlCon);
-            CMD1.Parameters.AddWithValue("@p1", "Waiting for approval");
+            CMD1.Parameters.AddWithValue("@p1", "Approved");
             CMD1.Parameters.AddWithValue("@p2", candidate_id);
             CMD1.ExecuteNonQuery();
             sqlCon.Close();

@@ -31,10 +31,10 @@ namespace HumanResourcesProject.MainPanels
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panelHR));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.prjctBTN = new System.Windows.Forms.Button();
+            this.workerBTN = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.workerBTN = new System.Windows.Forms.Button();
             this.cndidateBTN = new System.Windows.Forms.Button();
             this.infoBTN = new System.Windows.Forms.Button();
             this.exitBTN = new System.Windows.Forms.Button();
@@ -46,7 +46,7 @@ namespace HumanResourcesProject.MainPanels
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(35)))), ((int)(((byte)(65)))));
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.prjctBTN);
             this.panel1.Controls.Add(this.workerBTN);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -58,6 +58,34 @@ namespace HumanResourcesProject.MainPanels
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(342, 782);
             this.panel1.TabIndex = 1;
+            // 
+            // prjctBTN
+            // 
+            this.prjctBTN.FlatAppearance.BorderSize = 0;
+            this.prjctBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prjctBTN.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prjctBTN.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.prjctBTN.Location = new System.Drawing.Point(3, 258);
+            this.prjctBTN.Name = "prjctBTN";
+            this.prjctBTN.Size = new System.Drawing.Size(339, 100);
+            this.prjctBTN.TabIndex = 4;
+            this.prjctBTN.Text = "PROJELER";
+            this.prjctBTN.UseVisualStyleBackColor = true;
+            this.prjctBTN.Click += new System.EventHandler(this.prjctBTN_Click);
+            // 
+            // workerBTN
+            // 
+            this.workerBTN.FlatAppearance.BorderSize = 0;
+            this.workerBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.workerBTN.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.workerBTN.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.workerBTN.Location = new System.Drawing.Point(3, 364);
+            this.workerBTN.Name = "workerBTN";
+            this.workerBTN.Size = new System.Drawing.Size(339, 100);
+            this.workerBTN.TabIndex = 3;
+            this.workerBTN.Text = "ÇALIŞANLAR";
+            this.workerBTN.UseVisualStyleBackColor = true;
+            this.workerBTN.Click += new System.EventHandler(this.workerBTN_Click);
             // 
             // label1
             // 
@@ -79,33 +107,6 @@ namespace HumanResourcesProject.MainPanels
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Location = new System.Drawing.Point(3, 258);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(339, 100);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "PROJELER";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // workerBTN
-            // 
-            this.workerBTN.FlatAppearance.BorderSize = 0;
-            this.workerBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.workerBTN.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.workerBTN.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.workerBTN.Location = new System.Drawing.Point(3, 364);
-            this.workerBTN.Name = "workerBTN";
-            this.workerBTN.Size = new System.Drawing.Size(339, 100);
-            this.workerBTN.TabIndex = 3;
-            this.workerBTN.Text = "ÇALIŞANLAR";
-            this.workerBTN.UseVisualStyleBackColor = true;
-            this.workerBTN.Click += new System.EventHandler(this.workerBTN_Click);
             // 
             // cndidateBTN
             // 
@@ -185,7 +186,7 @@ namespace HumanResourcesProject.MainPanels
         private System.Windows.Forms.Button cndidateBTN;
         private System.Windows.Forms.Button infoBTN;
         private System.Windows.Forms.Button exitBTN;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button prjctBTN;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
     }

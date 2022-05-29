@@ -59,5 +59,15 @@ namespace HumanResourcesProject.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Eo_circle_green_checkmark_svg {
+            get {
+                object obj = ResourceManager.GetObject("Eo_circle_green_checkmark.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

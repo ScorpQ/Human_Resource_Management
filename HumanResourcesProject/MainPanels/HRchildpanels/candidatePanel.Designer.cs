@@ -42,6 +42,10 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.hire_changeBTN = new System.Windows.Forms.Button();
             this.eliminatedBTN = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioAll = new System.Windows.Forms.RadioButton();
+            this.radioElimtd = new System.Windows.Forms.RadioButton();
+            this.radioWait = new System.Windows.Forms.RadioButton();
+            this.radioWaitApprvl = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.addToGrid = new System.Windows.Forms.Button();
             this.Female = new System.Windows.Forms.RadioButton();
@@ -51,7 +55,6 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.phneBox = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.mjrBox2 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -59,6 +62,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.lstnameBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -71,9 +75,8 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.nameBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(35)))), ((int)(((byte)(90)))));
             this.nameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.nameBox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.nameBox.Location = new System.Drawing.Point(142, 75);
+            this.nameBox.Location = new System.Drawing.Point(142, 39);
             this.nameBox.Name = "nameBox";
-            this.nameBox.ReadOnly = true;
             this.nameBox.Size = new System.Drawing.Size(279, 41);
             this.nameBox.TabIndex = 2;
             // 
@@ -82,7 +85,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.mjrBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(35)))), ((int)(((byte)(90)))));
             this.mjrBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mjrBox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.mjrBox.Location = new System.Drawing.Point(142, 141);
+            this.mjrBox.Location = new System.Drawing.Point(142, 105);
             this.mjrBox.Name = "mjrBox";
             this.mjrBox.ReadOnly = true;
             this.mjrBox.Size = new System.Drawing.Size(279, 41);
@@ -93,32 +96,33 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.Location = new System.Drawing.Point(56, 75);
+            this.label2.Location = new System.Drawing.Point(42, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 32);
+            this.label2.Size = new System.Drawing.Size(104, 32);
             this.label2.TabIndex = 4;
-            this.label2.Text = "İSİM:";
+            this.label2.Text = "Name:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label3.Location = new System.Drawing.Point(11, 141);
+            this.label3.Location = new System.Drawing.Point(11, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 32);
+            this.label3.Size = new System.Drawing.Size(135, 32);
             this.label3.TabIndex = 5;
-            this.label3.Text = "MAJOR:";
+            this.label3.Text = "Position:";
             // 
             // hire_changeBTN
             // 
             this.hire_changeBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(35)))), ((int)(((byte)(70)))));
+            this.hire_changeBTN.FlatAppearance.BorderSize = 2;
             this.hire_changeBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.hire_changeBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.hire_changeBTN.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.hire_changeBTN.Location = new System.Drawing.Point(29, 197);
+            this.hire_changeBTN.Location = new System.Drawing.Point(21, 162);
             this.hire_changeBTN.Name = "hire_changeBTN";
-            this.hire_changeBTN.Size = new System.Drawing.Size(183, 74);
+            this.hire_changeBTN.Size = new System.Drawing.Size(195, 83);
             this.hire_changeBTN.TabIndex = 6;
             this.hire_changeBTN.Text = "Yönetici Onayına\r\n     Gönder\r\n";
             this.hire_changeBTN.UseVisualStyleBackColor = false;
@@ -127,12 +131,14 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             // eliminatedBTN
             // 
             this.eliminatedBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(35)))), ((int)(((byte)(70)))));
+            this.eliminatedBTN.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+            this.eliminatedBTN.FlatAppearance.BorderSize = 2;
             this.eliminatedBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eliminatedBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.eliminatedBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.eliminatedBTN.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.eliminatedBTN.Location = new System.Drawing.Point(238, 197);
+            this.eliminatedBTN.Location = new System.Drawing.Point(235, 162);
             this.eliminatedBTN.Name = "eliminatedBTN";
-            this.eliminatedBTN.Size = new System.Drawing.Size(183, 74);
+            this.eliminatedBTN.Size = new System.Drawing.Size(190, 82);
             this.eliminatedBTN.TabIndex = 8;
             this.eliminatedBTN.Text = "Ele\r\n";
             this.eliminatedBTN.UseVisualStyleBackColor = false;
@@ -141,6 +147,10 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             // groupBox1
             // 
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox1.Controls.Add(this.radioAll);
+            this.groupBox1.Controls.Add(this.radioElimtd);
+            this.groupBox1.Controls.Add(this.radioWait);
+            this.groupBox1.Controls.Add(this.radioWaitApprvl);
             this.groupBox1.Controls.Add(this.eliminatedBTN);
             this.groupBox1.Controls.Add(this.nameBox);
             this.groupBox1.Controls.Add(this.mjrBox);
@@ -156,6 +166,58 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Candidate:";
             // 
+            // radioAll
+            // 
+            this.radioAll.AutoSize = true;
+            this.radioAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.radioAll.Location = new System.Drawing.Point(297, 254);
+            this.radioAll.Name = "radioAll";
+            this.radioAll.Size = new System.Drawing.Size(61, 33);
+            this.radioAll.TabIndex = 13;
+            this.radioAll.TabStop = true;
+            this.radioAll.Text = "All";
+            this.radioAll.UseVisualStyleBackColor = true;
+            this.radioAll.CheckedChanged += new System.EventHandler(this.radioAll_CheckedChanged);
+            // 
+            // radioElimtd
+            // 
+            this.radioElimtd.AutoSize = true;
+            this.radioElimtd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.radioElimtd.Location = new System.Drawing.Point(297, 287);
+            this.radioElimtd.Name = "radioElimtd";
+            this.radioElimtd.Size = new System.Drawing.Size(103, 33);
+            this.radioElimtd.TabIndex = 12;
+            this.radioElimtd.TabStop = true;
+            this.radioElimtd.Text = "Elendi";
+            this.radioElimtd.UseVisualStyleBackColor = true;
+            this.radioElimtd.CheckedChanged += new System.EventHandler(this.radioElimtd_CheckedChanged);
+            // 
+            // radioWait
+            // 
+            this.radioWait.AutoSize = true;
+            this.radioWait.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.radioWait.Location = new System.Drawing.Point(45, 284);
+            this.radioWait.Name = "radioWait";
+            this.radioWait.Size = new System.Drawing.Size(114, 33);
+            this.radioWait.TabIndex = 11;
+            this.radioWait.TabStop = true;
+            this.radioWait.Text = "Waiting";
+            this.radioWait.UseVisualStyleBackColor = true;
+            this.radioWait.CheckedChanged += new System.EventHandler(this.radioWait_CheckedChanged);
+            // 
+            // radioWaitApprvl
+            // 
+            this.radioWaitApprvl.AutoSize = true;
+            this.radioWaitApprvl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.radioWaitApprvl.Location = new System.Drawing.Point(45, 254);
+            this.radioWaitApprvl.Name = "radioWaitApprvl";
+            this.radioWaitApprvl.Size = new System.Drawing.Size(138, 33);
+            this.radioWaitApprvl.TabIndex = 10;
+            this.radioWaitApprvl.TabStop = true;
+            this.radioWaitApprvl.Text = "Approved";
+            this.radioWaitApprvl.UseVisualStyleBackColor = true;
+            this.radioWaitApprvl.CheckedChanged += new System.EventHandler(this.radioWaitApprvl_CheckedChanged);
+            // 
             // groupBox2
             // 
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -167,7 +229,6 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.phneBox);
-            this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.mjrBox2);
             this.groupBox2.Controls.Add(this.label9);
@@ -188,7 +249,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.addToGrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(35)))), ((int)(((byte)(70)))));
             this.addToGrid.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.addToGrid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addToGrid.Location = new System.Drawing.Point(418, 196);
+            this.addToGrid.Location = new System.Drawing.Point(426, 141);
             this.addToGrid.Name = "addToGrid";
             this.addToGrid.Size = new System.Drawing.Size(213, 60);
             this.addToGrid.TabIndex = 16;
@@ -199,7 +260,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             // Female
             // 
             this.Female.AutoSize = true;
-            this.Female.Location = new System.Drawing.Point(569, 125);
+            this.Female.Location = new System.Drawing.Point(578, 101);
             this.Female.Name = "Female";
             this.Female.Size = new System.Drawing.Size(17, 16);
             this.Female.TabIndex = 15;
@@ -210,7 +271,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             // Male
             // 
             this.Male.AutoSize = true;
-            this.Male.Location = new System.Drawing.Point(491, 128);
+            this.Male.Location = new System.Drawing.Point(500, 104);
             this.Male.Name = "Male";
             this.Male.Size = new System.Drawing.Size(17, 16);
             this.Male.TabIndex = 14;
@@ -221,7 +282,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(530, 118);
+            this.pictureBox2.Location = new System.Drawing.Point(539, 94);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(33, 33);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -231,7 +292,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(455, 118);
+            this.pictureBox1.Location = new System.Drawing.Point(464, 94);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -243,7 +304,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label12.Location = new System.Drawing.Point(458, 75);
+            this.label12.Location = new System.Drawing.Point(467, 51);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(127, 32);
             this.label12.TabIndex = 11;
@@ -254,7 +315,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(66, 239);
+            this.label1.Location = new System.Drawing.Point(64, 219);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 32);
             this.label1.TabIndex = 10;
@@ -265,38 +326,28 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.phneBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(35)))), ((int)(((byte)(90)))));
             this.phneBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.phneBox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.phneBox.Location = new System.Drawing.Point(176, 239);
+            this.phneBox.Location = new System.Drawing.Point(179, 219);
             this.phneBox.Name = "phneBox";
             this.phneBox.Size = new System.Drawing.Size(215, 41);
             this.phneBox.TabIndex = 8;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label11.Location = new System.Drawing.Point(73, 183);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(0, 32);
-            this.label11.TabIndex = 9;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label10.Location = new System.Drawing.Point(66, 183);
+            this.label10.Location = new System.Drawing.Point(39, 165);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(101, 32);
+            this.label10.Size = new System.Drawing.Size(135, 32);
             this.label10.TabIndex = 9;
-            this.label10.Text = "Major:";
+            this.label10.Text = "Position:";
             // 
             // mjrBox2
             // 
             this.mjrBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(35)))), ((int)(((byte)(90)))));
             this.mjrBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mjrBox2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.mjrBox2.Location = new System.Drawing.Point(177, 183);
+            this.mjrBox2.Location = new System.Drawing.Point(180, 163);
             this.mjrBox2.Name = "mjrBox2";
             this.mjrBox2.Size = new System.Drawing.Size(215, 41);
             this.mjrBox2.TabIndex = 6;
@@ -307,7 +358,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label9.Location = new System.Drawing.Point(15, 127);
+            this.label9.Location = new System.Drawing.Point(18, 111);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(159, 32);
             this.label9.TabIndex = 7;
@@ -318,7 +369,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.fllnameBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(35)))), ((int)(((byte)(90)))));
             this.fllnameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.fllnameBox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.fllnameBox.Location = new System.Drawing.Point(177, 70);
+            this.fllnameBox.Location = new System.Drawing.Point(180, 50);
             this.fllnameBox.Name = "fllnameBox";
             this.fllnameBox.Size = new System.Drawing.Size(215, 41);
             this.fllnameBox.TabIndex = 2;
@@ -329,7 +380,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.lstnameBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(35)))), ((int)(((byte)(90)))));
             this.lstnameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lstnameBox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lstnameBox.Location = new System.Drawing.Point(177, 127);
+            this.lstnameBox.Location = new System.Drawing.Point(180, 107);
             this.lstnameBox.Name = "lstnameBox";
             this.lstnameBox.Size = new System.Drawing.Size(215, 41);
             this.lstnameBox.TabIndex = 3;
@@ -340,7 +391,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label8.Location = new System.Drawing.Point(15, 70);
+            this.label8.Location = new System.Drawing.Point(18, 50);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(162, 32);
             this.label8.TabIndex = 5;
@@ -398,7 +449,11 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.dataGridView1.Size = new System.Drawing.Size(1115, 421);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // candidatePanel
             // 
@@ -443,7 +498,6 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox fllnameBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label12;
@@ -451,5 +505,10 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
         private System.Windows.Forms.RadioButton Male;
         private System.Windows.Forms.Button addToGrid;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.RadioButton radioElimtd;
+        private System.Windows.Forms.RadioButton radioWait;
+        private System.Windows.Forms.RadioButton radioWaitApprvl;
+        private System.Windows.Forms.RadioButton radioAll;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
