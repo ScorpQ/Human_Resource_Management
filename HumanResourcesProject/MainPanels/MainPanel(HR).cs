@@ -45,14 +45,14 @@ namespace HumanResourcesProject.MainPanels
             da.Fill(dt);  
 
 
-            // to        
+            //        
             if (DateTime.Now >= Convert.ToDateTime("06:30"))
             {
-                label1.Text = "İyi Akşamlar " + dt.Rows[0][0].ToString();
+                label1.Text = "İyi Akşamlar,  " + dt.Rows[0][0].ToString();
             }
             else
             {
-                label1.Text = "Günaydın " + dt.Rows[0][0].ToString();
+                label1.Text = "Günaydın,  " + dt.Rows[0][0].ToString();
             }
 
             ip1.idKeeper2 = idKeeper1;
