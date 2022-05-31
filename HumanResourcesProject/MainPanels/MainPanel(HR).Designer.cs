@@ -29,7 +29,6 @@ namespace HumanResourcesProject.MainPanels
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panelHR));
             this.panel1 = new System.Windows.Forms.Panel();
             this.prjctBTN = new System.Windows.Forms.Button();
             this.workerBTN = new System.Windows.Forms.Button();
@@ -100,7 +99,7 @@ namespace HumanResourcesProject.MainPanels
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::HumanResourcesProject.Properties.Resources._401_4018684_transparent_hr_png_hr_icon_png_png_download;
             this.pictureBox1.Location = new System.Drawing.Point(50, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(240, 199);

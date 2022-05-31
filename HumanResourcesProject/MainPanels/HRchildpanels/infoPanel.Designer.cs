@@ -29,7 +29,6 @@ namespace HumanResourcesProject.MainPanels.HRpanels
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(infoPanel));
             this.txtNAME = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -200,7 +199,7 @@ namespace HumanResourcesProject.MainPanels.HRpanels
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::HumanResourcesProject.Properties.Resources.PngItem_29118;
             this.pictureBox1.Location = new System.Drawing.Point(695, 94);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(345, 299);

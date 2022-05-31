@@ -51,5 +51,23 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             CMD.ExecuteNonQuery();
             DT.sqlCon.Close();
         }
+
+        private void salaryBTN_Click(object sender, EventArgs e)
+        {
+            // set new salary.
+            string selectedValue = dataGridView1.SelectedRows[0].Cells["ID"].Value.ToString();
+            DT.sqlCon.Open();
+            string query_SHOW = "update tbl_WORKER set Salary=@u1 where ID=@u2";
+            SqlCommand CMD = new SqlCommand(query_SHOW ,DT.sqlCon);
+            CMD.Parameters.AddWithValue("@u1", salaryTXT.Text);
+            CMD.Parameters.AddWithValue("@u2", selectedValue);
+            CMD.ExecuteNonQuery();
+            DT.sqlCon.Close();
+
+
+            // Show new table.
+            string query_SHOW2 = "select * from tbl_WORKER";
+            DT.list(dataGridView1, query_SHOW2);
+        }
     }
 }

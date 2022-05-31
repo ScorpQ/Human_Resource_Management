@@ -15,7 +15,9 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
     {
         DataBase DT = new DataBase();
         // sql transactions for the person who man or woman. Check line 93 & 98.
-        string genderKeeper;     
+        string genderKeeper;
+        // 
+
 
         public candidatePanel()
         {
@@ -39,7 +41,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             string query = "insert into tbl_CANDIDATE (Firstname, Lastname, Major, Phone, Gender,Hire) values (@p1,@p2,@p3,@p4,@p5,@p6)";
             SqlCommand cmd = new SqlCommand(query, DT.sqlCon);
             cmd.Parameters.AddWithValue("@p1", fllnameBox.Text);
-            cmd.Parameters.AddWithValue("@p2", " "+lstnameBox.Text);
+            cmd.Parameters.AddWithValue("@p2", " " + lstnameBox.Text);
             cmd.Parameters.AddWithValue("@p3", mjrBox2.Text);
             cmd.Parameters.AddWithValue("@p4", phneBox.Text);
             cmd.Parameters.AddWithValue("@p5", genderKeeper);
@@ -56,20 +58,12 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        { 
-            //gets a collection that contains all the rows
-            DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-            //gets a collection that contains all the rows
-            nameBox.Text = row.Cells[1].Value.ToString() + row.Cells[2].Value.ToString();
-            mjrBox.Text = row.Cells[5].Value.ToString(); 
-        }
-
-        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
-            if(e.Button==MouseButtons.Right)
-            {
-
-            }
+            //gets a collection that contains all the rows
+            //DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+            //gets a collection that contains all the rows
+            //nameBox.Text = row.Cells[1].Value.ToString() + row.Cells[2].Value.ToString();
+            //mjrBox.Text = row.Cells[5].Value.ToString();
         }
 
         private void hire_changeBTN_Click(object sender, EventArgs e)
@@ -104,20 +98,11 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             genderKeeper = "Female";
         }
 
-        /*
-        private void nameBox_TextChanged(object sender, EventArgs e)
-        {
-            // search by name
-            string query_SHOW = "select * from tbl_CANDIDATE where Firstname + Lastname like '%" + nameBox.Text + "%'";
-            DT.list(dataGridView1,query_SHOW);
-        }
-        */
-
         private void radioAll_CheckedChanged(object sender, EventArgs e)
         {
             // show all in dataGrid
             string query_SHOW = "select * from tbl_CANDIDATE";
-            DT.list(dataGridView1,query_SHOW);
+            DT.list(dataGridView1, query_SHOW);
         }
 
         private void radioWaitApprvl_CheckedChanged(object sender, EventArgs e)
@@ -131,14 +116,28 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
         {
             // show only waiting for interview in dataGrid
             string query_SHOW = "select * from tbl_CANDIDATE where Hire ='Waiting'";
-            DT.list(dataGridView1,query_SHOW);
+            DT.list(dataGridView1, query_SHOW);
         }
 
         private void radioElimtd_CheckedChanged(object sender, EventArgs e)
         {
             // show all eliminated candidates in dataGrid
             string query_SHOW = "select * from tbl_CANDIDATE where Hire ='Eliminated'";
-            DT.list(dataGridView1,query_SHOW);
+            DT.list(dataGridView1, query_SHOW);
+        }
+
+        private void nameBox_TextChanged(object sender, EventArgs e)
+        {
+            // search by name
+            string query_SHOW = "select * from tbl_CANDIDATE where Firstname + Lastname like '%" + nameBox.Text + "%'";
+            DT.list(dataGridView1, query_SHOW);
+        }
+
+        private void mjrBox_TextChanged(object sender, EventArgs e)
+        {
+            // search by major
+            string query_SHOW = "select * from tbl_CANDIDATE where Major like '%" + mjrBox.Text + "%'";
+            DT.list(dataGridView1, query_SHOW);
         }
     }
 }

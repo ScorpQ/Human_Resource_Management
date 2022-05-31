@@ -163,6 +163,16 @@
       <DependentUpon>SignUp%28USER%29.cs</DependentUpon>
     </Compile>
     <Compile Include="SQLandFUNCS.cs" />
+    <None Include="images\icons8_ok_48px.png" />
+    <None Include="images\icons8_cancel_48px.png" />
+    <None Include="images\PngItem_29118.png" />
+    <None Include="images\icons8_male_80px.png" />
+    <None Include="images\icons8_female_80px.png" />
+    <None Include="images\Join-93.png" />
+    <None Include="images\icons8_hide_48px.png" />
+    <None Include="images\icons8_key_48px.png" />
+    <None Include="images\icons8_user_48px.png" />
+    <None Include="images\denemec.png" />
     <Content Include="images\Eo_circle_green_checkmark.svg.png" />
     <EmbeddedResource Include="MainPanels\HRchildpanels\candidatePanel.resx">
       <DependentUpon>candidatePanel.cs</DependentUpon>

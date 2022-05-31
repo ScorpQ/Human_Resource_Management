@@ -29,7 +29,6 @@ namespace HumanResourcesProject.LoginPanels
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_USER));
             this.panel2 = new System.Windows.Forms.Panel();
             this.invalidLbl = new System.Windows.Forms.Label();
             this.signupLbl = new System.Windows.Forms.LinkLabel();
@@ -142,7 +141,7 @@ namespace HumanResourcesProject.LoginPanels
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Image = global::HumanResourcesProject.Properties.Resources.icons8_hide_48px;
             this.pictureBox4.Location = new System.Drawing.Point(449, 6);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(31, 34);
@@ -164,7 +163,7 @@ namespace HumanResourcesProject.LoginPanels
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Image = global::HumanResourcesProject.Properties.Resources.icons8_key_48px1;
             this.pictureBox2.Location = new System.Drawing.Point(6, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(39, 34);
@@ -196,7 +195,7 @@ namespace HumanResourcesProject.LoginPanels
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Image = global::HumanResourcesProject.Properties.Resources.icons8_user_48px;
             this.pictureBox3.Location = new System.Drawing.Point(6, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(39, 34);
@@ -292,7 +291,7 @@ namespace HumanResourcesProject.LoginPanels
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::HumanResourcesProject.Properties.Resources.denemec;
             this.pictureBox1.Location = new System.Drawing.Point(20, 10);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(223, 203);

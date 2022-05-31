@@ -66,10 +66,6 @@ namespace HumanResourcesProject
         //*********************************************************************************************************
 
         // (tbl_CANDIDATE)
-        public void InsertTOtbl_CANDIDATE()
-        {
-
-        }
 
         //  if candidate is in "waiting" that makes turn into it "Approved" (tbl_CANDIDATE)
         public void change_Hire_To_waitingforapproval(string candidate_id)
