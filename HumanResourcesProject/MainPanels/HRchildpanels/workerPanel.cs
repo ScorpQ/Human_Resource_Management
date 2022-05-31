@@ -14,6 +14,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
     public partial class workerPanel : Form
     {
         DataBase DT = new DataBase();
+        string requestKeeper;
         string idKeeper;
 
         public workerPanel()
@@ -24,7 +25,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
         private void workerPanel_Load(object sender, EventArgs e)
         {
             // print tbl_CANDIDATE to DataGrid1
-            string query_SHOW = "select * from TBL_WORKER";
+            string query_SHOW = "select Firstname, Lastname, Major, Working, Salary, startPermisson, endPermission, request from TBL_WORKER";
             DT.list(dataGridView1, query_SHOW);
 
 
@@ -36,8 +37,8 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-            idKeeper = row.Cells[0].Value.ToString();
-            richTextBox1.Text = idKeeper;
+            requestKeeper = row.Cells[10].Value.ToString();
+            richTextBox1.Text = requestKeeper;
         }
 
         private void saveDate_Click(object sender, EventArgs e)
@@ -50,6 +51,9 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             CMD.Parameters.AddWithValue("@u3", idKeeper);
             CMD.ExecuteNonQuery();
             DT.sqlCon.Close();
+
+            // Reflesh
+            DT.list(dataGridView1,"select * from tbl_WORKER");
         }
 
         private void salaryBTN_Click(object sender, EventArgs e)

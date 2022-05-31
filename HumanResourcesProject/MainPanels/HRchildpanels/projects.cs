@@ -44,6 +44,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             DA.Fill(dt);
             richTextBox1.Text = dt.Rows[0][5].ToString();
             dataGridView1.DataSource = dt;
+            dataGridView1.Columns[5].Visible = false;
             DT.sqlCon.Close();
         }
 
@@ -56,6 +57,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             DA.Fill(dt);
             richTextBox1.Text = dt.Rows[0][5].ToString();
             dataGridView1.DataSource = dt;
+            dataGridView1.Columns[5].Visible = false;
             DT.sqlCon.Close();
         }
 
@@ -68,6 +70,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             DA.Fill(dt);
             richTextBox1.Text = dt.Rows[0][5].ToString();
             dataGridView1.DataSource = dt;
+            dataGridView1.Columns[5].Visible = false;
             DT.sqlCon.Close();
         }
 
@@ -80,6 +83,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             DA.Fill(dt);
             richTextBox1.Text = dt.Rows[0][5].ToString();
             dataGridView1.DataSource = dt;
+            dataGridView1.Columns[5].Visible = false;
             DT.sqlCon.Close();
         }
 
@@ -92,6 +96,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             DA.Fill(dt);
             richTextBox1.Text = dt.Rows[0][5].ToString();
             dataGridView1.DataSource = dt;
+            dataGridView1.Columns[5].Visible = false;
             DT.sqlCon.Close();
         }
     }
