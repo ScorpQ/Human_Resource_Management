@@ -165,7 +165,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.groupBox1.Size = new System.Drawing.Size(449, 331);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Candidate:";
+            this.groupBox1.Text = "Search:";
             // 
             // radioAll
             // 

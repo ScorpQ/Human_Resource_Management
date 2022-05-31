@@ -32,14 +32,14 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCPT = new System.Windows.Forms.TextBox();
-            this.lblCPT = new System.Windows.Forms.Label();
-            this.checkBTN = new System.Windows.Forms.Button();
-            this.lblMSG = new System.Windows.Forms.Label();
             this.false2 = new System.Windows.Forms.PictureBox();
             this.true2 = new System.Windows.Forms.PictureBox();
             this.false1 = new System.Windows.Forms.PictureBox();
             this.true1 = new System.Windows.Forms.PictureBox();
+            this.txtCPT = new System.Windows.Forms.TextBox();
+            this.lblCPT = new System.Windows.Forms.Label();
+            this.checkBTN = new System.Windows.Forms.Button();
+            this.lblMSG = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.false2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.true2)).BeginInit();
@@ -87,6 +87,46 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.label1.TabIndex = 32;
             this.label1.Text = "Sifre:";
             // 
+            // false2
+            // 
+            this.false2.Image = global::HumanResourcesProject.Properties.Resources.icons8_cancel_48px;
+            this.false2.Location = new System.Drawing.Point(632, 243);
+            this.false2.Name = "false2";
+            this.false2.Size = new System.Drawing.Size(51, 49);
+            this.false2.TabIndex = 31;
+            this.false2.TabStop = false;
+            this.false2.Visible = false;
+            // 
+            // true2
+            // 
+            this.true2.Image = global::HumanResourcesProject.Properties.Resources.icons8_ok_48px;
+            this.true2.Location = new System.Drawing.Point(632, 243);
+            this.true2.Name = "true2";
+            this.true2.Size = new System.Drawing.Size(51, 49);
+            this.true2.TabIndex = 30;
+            this.true2.TabStop = false;
+            this.true2.Visible = false;
+            // 
+            // false1
+            // 
+            this.false1.Image = global::HumanResourcesProject.Properties.Resources.icons8_cancel_48px;
+            this.false1.Location = new System.Drawing.Point(632, 174);
+            this.false1.Name = "false1";
+            this.false1.Size = new System.Drawing.Size(51, 49);
+            this.false1.TabIndex = 28;
+            this.false1.TabStop = false;
+            this.false1.Visible = false;
+            // 
+            // true1
+            // 
+            this.true1.Image = global::HumanResourcesProject.Properties.Resources.icons8_ok_48px;
+            this.true1.Location = new System.Drawing.Point(632, 174);
+            this.true1.Name = "true1";
+            this.true1.Size = new System.Drawing.Size(51, 49);
+            this.true1.TabIndex = 27;
+            this.true1.TabStop = false;
+            this.true1.Visible = false;
+            // 
             // txtCPT
             // 
             this.txtCPT.BackColor = System.Drawing.Color.Teal;
@@ -133,49 +173,9 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.lblMSG.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblMSG.Location = new System.Drawing.Point(133, 13);
             this.lblMSG.Name = "lblMSG";
-            this.lblMSG.Size = new System.Drawing.Size(557, 132);
+            this.lblMSG.Size = new System.Drawing.Size(599, 132);
             this.lblMSG.TabIndex = 23;
-            this.lblMSG.Text = "Bilgiler kısmına geçmeden önce\r\n          şifreni tekrardan gir\r\n\r\n";
-            // 
-            // false2
-            // 
-            this.false2.Image = global::HumanResourcesProject.Properties.Resources.icons8_cancel_48px;
-            this.false2.Location = new System.Drawing.Point(632, 243);
-            this.false2.Name = "false2";
-            this.false2.Size = new System.Drawing.Size(51, 49);
-            this.false2.TabIndex = 31;
-            this.false2.TabStop = false;
-            this.false2.Visible = false;
-            // 
-            // true2
-            // 
-            this.true2.Image = global::HumanResourcesProject.Properties.Resources.icons8_ok_48px;
-            this.true2.Location = new System.Drawing.Point(632, 243);
-            this.true2.Name = "true2";
-            this.true2.Size = new System.Drawing.Size(51, 49);
-            this.true2.TabIndex = 30;
-            this.true2.TabStop = false;
-            this.true2.Visible = false;
-            // 
-            // false1
-            // 
-            this.false1.Image = global::HumanResourcesProject.Properties.Resources.icons8_cancel_48px;
-            this.false1.Location = new System.Drawing.Point(632, 174);
-            this.false1.Name = "false1";
-            this.false1.Size = new System.Drawing.Size(51, 49);
-            this.false1.TabIndex = 28;
-            this.false1.TabStop = false;
-            this.false1.Visible = false;
-            // 
-            // true1
-            // 
-            this.true1.Image = global::HumanResourcesProject.Properties.Resources.icons8_ok_48px;
-            this.true1.Location = new System.Drawing.Point(632, 174);
-            this.true1.Name = "true1";
-            this.true1.Size = new System.Drawing.Size(51, 49);
-            this.true1.TabIndex = 27;
-            this.true1.TabStop = false;
-            this.true1.Visible = false;
+            this.lblMSG.Text = "Bilgilerim kısmına geçmeden önce\r\n          şifreni tekrardan gir\r\n\r\n";
             // 
             // passwordCheckPanel
             // 

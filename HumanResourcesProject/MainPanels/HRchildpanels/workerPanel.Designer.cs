@@ -106,6 +106,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1115, 421);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // groupBox1
             // 
@@ -128,7 +129,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.salaryBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(35)))), ((int)(((byte)(70)))));
             this.salaryBTN.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.salaryBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.salaryBTN.Location = new System.Drawing.Point(52, 196);
+            this.salaryBTN.Location = new System.Drawing.Point(52, 199);
             this.salaryBTN.Name = "salaryBTN";
             this.salaryBTN.Size = new System.Drawing.Size(250, 79);
             this.salaryBTN.TabIndex = 17;
@@ -141,17 +142,18 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.nameBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(35)))), ((int)(((byte)(90)))));
             this.nameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.nameBox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.nameBox.Location = new System.Drawing.Point(126, 61);
+            this.nameBox.Location = new System.Drawing.Point(126, 64);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(227, 41);
             this.nameBox.TabIndex = 6;
+            this.nameBox.TextChanged += new System.EventHandler(this.nameBox_TextChanged);
             // 
             // salaryTXT
             // 
             this.salaryTXT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(35)))), ((int)(((byte)(90)))));
             this.salaryTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.salaryTXT.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.salaryTXT.Location = new System.Drawing.Point(126, 122);
+            this.salaryTXT.Location = new System.Drawing.Point(126, 125);
             this.salaryTXT.Name = "salaryTXT";
             this.salaryTXT.Size = new System.Drawing.Size(227, 41);
             this.salaryTXT.TabIndex = 7;
@@ -161,7 +163,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.Location = new System.Drawing.Point(26, 67);
+            this.label2.Location = new System.Drawing.Point(26, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 32);
             this.label2.TabIndex = 8;
@@ -172,7 +174,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label3.Location = new System.Drawing.Point(8, 128);
+            this.label3.Location = new System.Drawing.Point(8, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 32);
             this.label3.TabIndex = 9;
@@ -279,7 +281,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(334, 252);
             this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "Ehe";
+            this.richTextBox1.Text = "";
             // 
             // workerPanel
             // 

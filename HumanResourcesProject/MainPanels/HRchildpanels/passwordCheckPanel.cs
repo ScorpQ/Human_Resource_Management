@@ -13,19 +13,34 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
 {
     public partial class passwordCheckPanel : Form
     {
-
+        //
         DataBase DT = new DataBase();
         public string idKeeper3;
         int result;
-
+        //
+        
         public passwordCheckPanel()
         {
-
             InitializeComponent();
+        }
+        
+        private void passwordCheckPanel_Load(object sender, EventArgs e)
+        {
+            // Cleaning the components
+            txtPassword.Clear();
+            txtCPT.Clear();
+
+            // Captcha
+            Random R = new Random();
+            int first = R.Next(0, 100);
+            int second = R.Next(0, 100);
+            result = first + second;
+            lblCPT.Text = first + " + " + second + " = ";
         }
 
         private void checkBTN_Click(object sender, EventArgs e)
         {
+            // Password checking...
             DT.sqlCon.Open();
             SqlCommand cmd = new SqlCommand("select Password from tbl_USER where PerID=@p1", DT.sqlCon);
             cmd.Parameters.AddWithValue("@p1", idKeeper3);
@@ -65,21 +80,6 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
                 false2.Visible = true;
                 DT.sqlCon.Close();
             }
-
-
-        }
-
-        private void passwordCheckPanel_Load(object sender, EventArgs e)
-        {
-            txtPassword.Clear();
-            txtCPT.Clear();
-
-            // Captcha
-            Random R = new Random();
-            int first = R.Next(0, 100);
-            int second = R.Next(0, 100);
-            result = first + second;
-            lblCPT.Text = first + " + " + second + " = ";
-        }
+        }       
     }
 }

@@ -25,7 +25,7 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
         private void workerPanel_Load(object sender, EventArgs e)
         {
             // print tbl_CANDIDATE to DataGrid1
-            string query_SHOW = "select Firstname, Lastname, Major, Working, Salary, startPermisson, endPermission, request from TBL_WORKER";
+            string query_SHOW = "select ID, Firstname, Lastname, Major, Working, Salary, startPermisson, endPermission, request from TBL_WORKER";
             DT.list(dataGridView1, query_SHOW);
 
 
@@ -34,26 +34,27 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             dateTimePicker2.CustomFormat = "MMMM dddd yyyy";
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-            requestKeeper = row.Cells[10].Value.ToString();
-            richTextBox1.Text = requestKeeper;
+            int rowIndex = e.RowIndex;
+            DataGridViewRow row = dataGridView1.Rows[rowIndex];
+            richTextBox1.Text = row.Cells[8].Value.ToString();
         }
 
         private void saveDate_Click(object sender, EventArgs e)
         {
+            string selectedValue = dataGridView1.SelectedRows[0].Cells["ID"].Value.ToString();
             string query_SHOW = "update tbl_WORKER set startPermisson=@u1, endPermission=@u2 where ID=@u3";
             DT.sqlCon.Open();
             SqlCommand CMD = new SqlCommand(query_SHOW,DT.sqlCon);
             CMD.Parameters.AddWithValue("@u1",dateTimePicker1.Value);
             CMD.Parameters.AddWithValue("@u2",dateTimePicker2.Value);
-            CMD.Parameters.AddWithValue("@u3", idKeeper);
+            CMD.Parameters.AddWithValue("@u3", selectedValue);
             CMD.ExecuteNonQuery();
             DT.sqlCon.Close();
 
             // Reflesh
-            DT.list(dataGridView1,"select * from tbl_WORKER");
+            DT.list(dataGridView1, "select ID, Firstname, Lastname, Major, Working, Salary, startPermisson, endPermission, request from tbl_WORKER");
         }
 
         private void salaryBTN_Click(object sender, EventArgs e)
@@ -72,6 +73,13 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             // Show new table.
             string query_SHOW2 = "select * from tbl_WORKER";
             DT.list(dataGridView1, query_SHOW2);
+        }
+
+        private void nameBox_TextChanged(object sender, EventArgs e)
+        {
+            // search by name
+            string query_SHOW = "select * from tbl_WORKER where Firstname + Lastname like '%" + nameBox.Text + "%'";
+            DT.list(dataGridView1, query_SHOW);
         }
     }
 }

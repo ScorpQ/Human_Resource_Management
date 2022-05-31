@@ -22,6 +22,11 @@ namespace HumanResourcesProject.MainPanels.HRchildpanels
             InitializeComponent();
         }
 
+        private void projects_Load(object sender, EventArgs e)
+        {
+            P1_Click(sender, e);
+        }
+
         private void P1_Click(object sender, EventArgs e)
         {
             query = "select Firstname, Lastname, Major, Position, projeName, projeDescribe from tbl_WORKER inner join tbl_PROJECT on tbl_WORKER.projeID = tbl_PROJECT.projeID where tbl_PROJECT.projeID=7878";

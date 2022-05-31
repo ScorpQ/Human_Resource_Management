@@ -44,7 +44,7 @@ namespace HumanResourcesProject.MainPanels.HRpanels
             }
             DT.sqlCon.Close();
 
-            // Check line 29.
+            //Check line 53.
             lockBox1.Checked = true;           
         }
 
@@ -74,7 +74,7 @@ namespace HumanResourcesProject.MainPanels.HRpanels
             SqlConnection sqlcnt = new SqlConnection("Data Source=DESKTOP-OF07IF9;Initial Catalog=HRmanagement;Integrated Security=True");
             sqlcnt.Open();
 
-            // To 
+            //
             SqlCommand cmd1 = new SqlCommand("select ID from tbl_USER where PerId=@p1",sqlcnt);
             cmd1.Parameters.AddWithValue("@p1", idKeeper2);
             SqlDataAdapter dr = new SqlDataAdapter(cmd1);
@@ -82,7 +82,7 @@ namespace HumanResourcesProject.MainPanels.HRpanels
             dr.Fill(dt);
             string uniqID = dt.Rows[0][0].ToString();
 
-            // To
+            //
             SqlCommand cmd2 = new SqlCommand("update tbl_USER set Lastname=@p2,Phone = @p3, perID=@p4,Title =@p5, Password=@p6 where ID = @p1", sqlcnt);
             cmd2.Parameters.AddWithValue("@p1", uniqID);
             cmd2.Parameters.AddWithValue("@p2", txtSURNAME.Text);
@@ -93,42 +93,10 @@ namespace HumanResourcesProject.MainPanels.HRpanels
             cmd2.ExecuteNonQuery();
             sqlcnt.Close();
 
-            // To 
+            // 
             label5.Visible = true;
             label5.Text = "Güncellendi!";
 
         }
     }
 }
-
-
-
-/* 
-            SqlCommand cmd = new SqlCommand("insert into tbl_USER (Firstname, Lastname, Phone, PerID, Title, Password) values (@p1,@p2,@p3,@p4,@p5,@p6)",sqlcnt);
-            cmd.Parameters.AddWithValue("@p1",textBox1.Text);
-            cmd.Parameters.AddWithValue("@p2",textBox2.Text);
-            cmd.Parameters.AddWithValue("@p3",textBox3.Text);
-            cmd.Parameters.AddWithValue("@p4",textBox4.Text);
-            cmd.Parameters.AddWithValue("@p5",textBox7.Text);
-            cmd.Parameters.AddWithValue("@p6",textBox6.Text);
-            cmd.ExecuteNonQuery();
-            sqlcnt.Close(); 
- 
- 
-            SqlConnection sqlcnt = new SqlConnection("Data Source=DESKTOP-OF07IF9;Initial Catalog=HRmanagement;Integrated Security=True");
-            sqlcnt.Open();
-            SqlCommand cmd = new SqlCommand("update tbl_USER set Lastname = @p2, Phone = @p3, Title =@p5, Password=@p6 where Firstname = @p1", sqlcnt);
-            cmd.Parameters.AddWithValue("@p1", textBox1.Text);
-            cmd.Parameters.AddWithValue("@p2", textBox2.Text);
-            cmd.Parameters.AddWithValue("@p3", textBox3.Text);
-            cmd.Parameters.AddWithValue("@p4", textBox4.Text);
-            cmd.Parameters.AddWithValue("@p5", textBox7.Text);
-            cmd.Parameters.AddWithValue("@p6", textBox6.Text);
-          //cmd.Parameters.AddWithValue("@p7", idKeeper2);  
-            cmd.ExecuteNonQuery();
-            sqlcnt.Close();
-            MessageBox.Show("-__-");
- 
- 
- 
- */
